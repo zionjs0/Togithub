@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>tiktokdl</title>
+</head>
+<body>
+<h2>tiktokdl API</h2>
+<input id="inp" placeholder="input">
+<button onclick="go()">Run</button>
+<pre id="out"></pre>
+
+<script>
+async function go() {
+    let val = document.getElementById('inp').value
+    let res = await fetch("" + encodeURIComponent(val))
+    let data = await res.json()
+    document.getElementById('out').textContent = JSON.stringify(data, null, 2)
+}
+</script>
+</body>
+</html>
